@@ -13,3 +13,7 @@ Landing page for The Woodshop, Dad's sawmill and woodshop in Trego, WI. One stat
   - Illustration is the on-screen ink sketch voice: charcoal line, no fills (`assets/endgrain.svg`, drawn in on load, static under reduced motion).
   - Wool grain on the page ground only, never on cards. Small text on blue goes on deep fjord; button labels on woad are 19 px semibold.
 - DNS: Porkbun, CNAME `woodshop` → `lettuceaswell.github.io`.
+
+## Images
+- `assets/img/` holds placeholder art from the House Hansen pipeline (`modern-viking-brand/.claude/skills/sketch`). Photos: Flux Klein (objects) and RealVis (hands), graded with `scripts/grade.sh natural` (hands: `forge`). Ink spots: Z-Image house hand, finished in oat ink. `art/shots.sh` regenerates every run; `assets/img/SOURCES.txt` maps each file to its run and seed.
+- Real footage goes in `raw/` (git-ignored). Real photos replace the placeholders one for one, same file names. The footer says "Some photos are illustrations" until they're all real.
