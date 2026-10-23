@@ -1,0 +1,62 @@
+/* House Hansen tokens. Named by material, not by hue.
+   Source of truth: tokens/palette.json (2026-10-21). Why each color exists:
+   pages/2026-10-21-color-system.html. Measured basis: docs/03-color-analysis.md. */
+:root {
+  /* grounds */
+  --mv-oat: #E8DFCC;            /* light page ground (card 0) */
+  --mv-oat-light: #F0E9DA;      /* raised surface on oat */
+  --mv-oat-line: #CDC3AE;       /* rules on oat */
+  --mv-fjord-charcoal: #2B2E33; /* dark ground */
+
+  /* ink */
+  --mv-warm-charcoal: #3B3330;  /* text on light, never pure black */
+  --mv-muted: #5E4F42;          /* secondary text on oat */
+  --mv-iron: #5A5F63;           /* cool neutral, metal */
+
+  /* complement family: the primary lives here */
+  --mv-woad: #3C7585;
+  --mv-woad-lifted: #5A95A6;    /* woad on dark grounds */
+  --mv-deep-fjord: #214C58;
+  --mv-pine: #495F4E;
+
+  /* warm family: accents only */
+  --mv-auburn: #A47159;         /* the one warm accent; not body text on oat (3.1:1) */
+  --mv-auburn-light: #C9A58E;   /* auburn on dark grounds */
+  --mv-chestnut: #744A3D;
+  --mv-peat: #5F4C45;
+
+  /* restricted */
+  --mv-oxblood: #6D3739;        /* error state, print, leather. Never a fill near the face */
+  --mv-bronze: #A57C45;         /* second metal, hardware only */
+
+  /* semantic, light */
+  --mv-bg: var(--mv-oat);
+  --mv-surface: var(--mv-oat-light);
+  --mv-text: var(--mv-warm-charcoal);
+  --mv-text-muted: var(--mv-muted);
+  --mv-primary: var(--mv-woad);         /* 3.9:1 on oat: buttons, icons, large links */
+  --mv-on-primary: var(--mv-oat-light);
+  --mv-accent: var(--mv-auburn);
+  --mv-rule: var(--mv-oat-line);
+  --mv-success: var(--mv-pine);
+  --mv-error: var(--mv-oxblood);
+}
+:root[data-theme="dark"] {
+  --mv-bg: var(--mv-fjord-charcoal);
+  --mv-surface: #353A40;
+  --mv-text: var(--mv-oat);             /* 10.3:1 */
+  --mv-text-muted: var(--mv-auburn-light);
+  --mv-primary: var(--mv-woad-lifted);
+  --mv-on-primary: var(--mv-fjord-charcoal);
+  --mv-accent: var(--mv-auburn-light);
+  --mv-rule: #4A4F55;
+  --mv-success: #8FA793;
+  --mv-error: #B07A7C;
+}
+/* bright ground, fourth family: woad full bleed. Large type only (oat on woad 3.9:1);
+   set body copy on deep fjord instead (7.1:1). */
+[data-ground="woad"] {
+  --mv-bg: var(--mv-woad);
+  --mv-text: var(--mv-oat-light);
+  --mv-accent: var(--mv-oat-light);
+}
