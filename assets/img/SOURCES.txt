@@ -1,15 +1,16 @@
-barn 20261023-143247-klein/gen_00980_
-hands 20261023-143326-sdxl/gen_00984_
 chair 20261023-142627-klein/gen_00963_
 table 20261023-142822-klein/gen_00968_
-sawing 20261023-144057-klein/gen_01003_
 mantel 20261023-143215-klein/gen_00977_
-lumber 20261023-142305-klein/gen_00957_
 vanity 20261023-143012-klein/gen_00970_
-hero 20261023-144007-klein/gen_00998_
 slab 20261023-142448-klein/gen_00961_
 ink-log 20261023-143346-zimage/gen_00987_ (finish --ground transparent --ink E8DFCC)
 ink-flitch 20261023-144131-zimage/gen_01004_ (finish --ground transparent --ink E8DFCC)
 ink-slab 20261023-143551-zimage/gen_00991_ (finish --ground transparent --ink E8DFCC)
 ink-chips 20261023-143656-zimage/gen_00992_ (finish --ground transparent --ink E8DFCC)
 ink-barn 20261023-144237-zimage/gen_01006_ (finish --ground transparent --ink E8DFCC)
+ink-mill 20261023-150852-klein/gen_01014_ (klein --source raw/IMG_4893 @6s, finish --ground transparent)
+sawing raw/IMG_4896.MOV @ 20s crop 2880:2160:420:0, natural grade + green/red tame
+lumber raw/IMG_4900.MOV @ 10s crop 2880:2160:480:0, natural grade + green/red tame
+logpile raw/IMG_4852.MOV @ 19s crop 3840:1646:0:300, forge grade
+shed raw/IMG_4905.MOV @ 35s crop 3240:2160:300:0, natural grade + stronger red tame (r+m -0.72)
+hero-saw-poster + video/hero-saw.mp4  raw/IMG_4905.MOV 9-14.5s, hflip, green/red tame + house-natural hald LUT, 0.8s crossfade loop

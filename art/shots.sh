@@ -33,3 +33,8 @@ run hero2   "a portable band sawmill in a clearing of tall Norway pine forest: a
 run sawing2 "close-up of a horizontal band saw blade on a portable sawmill slicing a thin board off the top of a large pine log lying on a steel track, sawdust spraying from the cut, steel sawhead frame and blade guard visible, no people" --model klein --n 4 --seed 112 --w 1152 --h 864 --style "$PHOTO"
 run ink-flitch2 "a single rough-sawn lumber plank lying flat, with wavy natural bark still on both long edges, seen in three-quarter view, one subject, lots of white space" --model zimage --n 2 --seed 206 --style "$INK"
 run ink-barn2 "a small timber monitor barn: a tall center section with its own gable roof and a row of small windows, and lower shed roofs on both sides, built from rough boards, one subject, lots of white space" --model zimage --n 2 --seed 207 --style "$INK"
+
+# Round 3: real frames from raw/ redrawn in the house ink hand (Klein reference edit).
+# Sources: raw/IMG_4852.MOV @ 8 s (log ends), raw/IMG_4893.MOV @ 6 s (the mill under the saw shed).
+run logends: comfy.py gen 'redraw this photo as a loose confident black ink line drawing...' --model klein --source raw/IMG_4852_8 --style '' --n 4 --seed 301 --w 1152 --h 768
+run mill: comfy.py gen 'redraw this photo as a loose confident black ink line drawing...' --model klein --source raw/IMG_4893_6 --style '' --n 4 --seed 301 --w 1152 --h 768

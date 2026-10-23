@@ -16,4 +16,4 @@ Landing page for The Woodshop, Dad's sawmill and woodshop in Trego, WI. One stat
 
 ## Images
 - `assets/img/` holds placeholder art from the House Hansen pipeline (`modern-viking-brand/.claude/skills/sketch`). Photos: Flux Klein (objects) and RealVis (hands), graded with `scripts/grade.sh natural` (hands: `forge`). Ink spots: Z-Image house hand, finished in oat ink. `art/shots.sh` regenerates every run; `assets/img/SOURCES.txt` maps each file to its run and seed.
-- Real footage goes in `raw/` (git-ignored). Real photos replace the placeholders one for one, same file names. The footer says "Some photos are illustrations" until they're all real.
+- Real footage goes in `raw/` (git-ignored; the phone files carry GPS, so only re-encoded frames and clips are published, with metadata stripped). Real footage is graded with the house LUT plus a green/red tame (`huesaturation`) because the mill is Kelly green and the tractor is orange; the recipe for every file is in `assets/img/SOURCES.txt`. The footer says "Some photos are illustrations" until the AI stand-ins (slab card, furniture cards, ink spots) are replaced.

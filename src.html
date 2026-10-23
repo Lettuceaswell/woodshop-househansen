@@ -65,7 +65,7 @@ nav.links a:hover { color: var(--mv-text); }
 /* hero: text on oat, photo bleeding off the right edge with the Hero.dc fade */
 .hero { position: relative; min-height: clamp(580px, 82vh, 860px); display: flex; align-items: center; overflow: hidden; }
 .hero-photo { position: absolute; inset: 0 0 0 44%; }
-.hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 55% 62%; display: block; }
+.hero-photo video { width: 100%; height: 100%; object-fit: cover; object-position: 76% 78%; display: block; background: var(--mv-oat-line); }
 .hero-photo::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, var(--mv-bg) 0%, color-mix(in srgb, var(--mv-bg) 0%, transparent) 30%); }
 .hero .wrap { position: relative; z-index: 2; width: 100%; }
 .hero-copy { max-width: 540px; padding-block: clamp(48px, 7vw, 96px); }
@@ -156,6 +156,7 @@ blockquote cite { display: block; margin-top: 12px; font: 500 12px/1 var(--font-
 .order { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(28px, 5vw, 72px); }
 .order aside h2 { font-size: clamp(40px, 5.4vw, 64px); margin: 14px 0 20px; }
 .order aside p { color: var(--mv-text-muted); }
+.aside-ink { display: block; width: 100%; max-width: 460px; height: auto; margin-top: 36px; }
 .facts { list-style: none; padding: 0; margin: 28px 0 0; border-top: var(--strand) solid var(--mv-rule); }
 .facts li { padding: 14px 0; border-bottom: var(--hair) solid var(--mv-rule); display: grid; grid-template-columns: 110px 1fr; gap: 12px; font-size: 15px; }
 .facts li b { font-weight: 500; color: var(--mv-text-muted); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; padding-top: 3px; }
@@ -205,7 +206,7 @@ footer .brand .mark { font-size: 44px; color: var(--mv-text); }
 
 <main id="top">
   <section class="hero">
-    <div class="hero-photo"><img class="" src="assets/img/hero.webp" srcset="assets/img/hero-640.webp 640w, assets/img/hero.webp 2000w" sizes="(max-width: 820px) 100vw, 62vw" width="2000" height="1120" alt="A portable band sawmill in a clearing of Norway pine, fresh boards stacked beside it" fetchpriority="high" decoding="async"></div>
+    <div class="hero-photo"><video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/img/hero-saw-poster.webp" aria-label="The band saw cutting a pine cant, sawdust spraying"><source src="assets/video/hero-saw.mp4" type="video/mp4"></video></div>
     <div class="wrap">
       <div class="hero-copy">
         <span class="eyebrow">Sawmill &amp; woodshop · Washburn County</span>
@@ -235,7 +236,7 @@ footer .brand .mark { font-size: 44px; color: var(--mv-text); }
       </div>
       <div class="grid3">
         <article class="card">
-          <img class="card-img" src="assets/img/sawing.webp" srcset="assets/img/sawing-640.webp 640w, assets/img/sawing.webp 960w" sizes="(max-width: 900px) 100vw, 380px" width="960" height="720" alt="A band saw blade slicing a board off a pine log" loading="lazy" decoding="async">
+          <img class="card-img" src="assets/img/sawing.webp" srcset="assets/img/sawing-640.webp 640w, assets/img/sawing.webp 960w" sizes="(max-width: 900px) 100vw, 380px" width="960" height="720" alt="Pushing the sawhead through a Norway pine log under the saw shed" loading="lazy" decoding="async">
           <span class="num">No. 01</span>
           <h3>Custom sawing</h3>
           <div class="price">$50<small>/ hour</small></div>
@@ -248,7 +249,7 @@ footer .brand .mark { font-size: 44px; color: var(--mv-text); }
           <a class="btn ghost sm" href="#order" data-pick="sawing">Book sawing time</a>
         </article>
         <article class="card">
-          <img class="card-img" src="assets/img/lumber.webp" srcset="assets/img/lumber-640.webp 640w, assets/img/lumber.webp 960w" sizes="(max-width: 900px) 100vw, 380px" width="960" height="720" alt="Rough-sawn pine boards sticker-stacked under a shed roof" loading="lazy" decoding="async">
+          <img class="card-img" src="assets/img/lumber.webp" srcset="assets/img/lumber-640.webp 640w, assets/img/lumber.webp 960w" sizes="(max-width: 900px) 100vw, 380px" width="960" height="720" alt="Fresh-sawn pine timbers on sawhorses" loading="lazy" decoding="async">
           <span class="num">No. 02</span>
           <h3>Rough-sawn Norway pine</h3>
           <div class="price">$1.00<small>/ board foot</small></div>
@@ -319,7 +320,7 @@ footer .brand .mark { font-size: 44px; color: var(--mv-text); }
   </section>
 
   <section id="story" class="forge">
-    <figure class="wrap band-photo"><img class="" src="assets/img/hands.webp" srcset="assets/img/hands-640.webp 640w, assets/img/hands.webp 1600w" sizes="(max-width: 1160px) 100vw, 1160px" width="1600" height="686" alt="A carpenter's hands on a fresh-sawn pine board" loading="lazy" decoding="async"></figure>
+    <figure class="wrap band-photo"><img src="assets/img/logpile.webp" srcset="assets/img/logpile-640.webp 640w, assets/img/logpile.webp 1600w" sizes="(max-width: 1160px) 100vw, 1160px" width="1600" height="686" alt="The Norway pine log pile, a semi load from a logger we know" loading="lazy" decoding="async"></figure>
     <div class="wrap story">
       <div>
         <span class="eyebrow">The mill</span>
@@ -341,8 +342,8 @@ footer .brand .mark { font-size: 44px; color: var(--mv-text); }
   <section id="shop">
     <div class="wrap">
       <figure class="wide-photo">
-        <img class="" src="assets/img/barn.webp" srcset="assets/img/barn-640.webp 640w, assets/img/barn.webp 1400w" sizes="(max-width: 1160px) 100vw, 1160px" width="1400" height="933" alt="The timber frame of the shop barn going up" loading="lazy" decoding="async">
-        <figcaption>The shop barn, going up now. Framed from timbers off this mill.</figcaption>
+        <img src="assets/img/shed.webp" srcset="assets/img/shed-640.webp 640w, assets/img/shed.webp 1400w" sizes="(max-width: 1160px) 100vw, 1160px" width="1400" height="933" alt="The saw shed and the tractor that feeds the mill" loading="lazy" decoding="async">
+        <figcaption>The saw shed, roofed with flitches off this same mill. The shop barn goes up next.</figcaption>
       </figure>
       <div class="sec-head">
         <div><span class="eyebrow">From the shop</span><h2>Built by hand, to order</h2></div>
@@ -397,6 +398,7 @@ footer .brand .mark { font-size: 44px; color: var(--mv-text); }
           <li><b>Pay</b>Cash, check, card or tap to pay at pickup</li>
           <li><b>Season</b>Sawing through November, before snow</li>
         </ul>
+        <img class="aside-ink" src="assets/img/ink-mill.webp" width="1100" height="733" alt="Ink drawing of the mill under the saw shed, a log on the bed and the tractor behind" loading="lazy" decoding="async">
       </aside>
       <form class="req" id="req" novalidate>
         <div class="full lbl">What are you after?
@@ -444,6 +446,8 @@ footer .brand .mark { font-size: 44px; color: var(--mv-text); }
 <script>
 (() => {
   const $ = id => document.getElementById(id);
+  const vid = document.querySelector(".hero-video");
+  if (vid && matchMedia("(prefers-reduced-motion: reduce)").matches) { vid.removeAttribute("autoplay"); vid.pause(); }
   const money = n => "$" + (Math.round(n * 100) / 100).toLocaleString(undefined, { minimumFractionDigits: n % 1 ? 2 : 0, maximumFractionDigits: 2 });
   let summary = "";
   function calc() {
