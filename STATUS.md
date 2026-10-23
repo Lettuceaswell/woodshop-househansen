@@ -21,7 +21,7 @@ Last session: 2026-10-23. Read this first next time.
 - Prices on the site match `monetization/ideas/dad-concrete-barn-sawmill/first-sale/` (branch `wt/wood-first-sale`). Furniture prices are placeholders: chair $325 and table $895 are from Etsy comps, vanity $650 and shelf $85 are guesses. Dad hasn't approved any price yet.
 
 ## Next, in order
-1. Enforce HTTPS once GitHub issues the cert. Levi reacts to the motion pass.
+1. Enforce HTTPS once GitHub issues the cert, and switch the `og:url`/`og:image` tags in `src.html` to https. Levi reacts to the motion pass.
 2. Dad approves prices (Saturday call in the first-week plan). Update site, calculator values, price sheet and listings together.
 3. Wire the order form to a real inbox (text or email), then remove noindex.
 4. Replace AI placeholders with real photos: slab bundle, anything Dad has built.
