@@ -2,7 +2,7 @@
 
 Landing page for The Woodshop, Dad's sawmill and woodshop in Trego, WI. One static page, hosted on GitHub Pages.
 
-- Edit `src.html`, then run `python3 build.py`. That inlines the House Hansen mark and the end-grain log into `index.html`. Commit both files.
+- Edit `src.html`, then run `python3 build.py`. That inlines the House Hansen mark, the end-grain log, the knot divider and the live-edge bark into `index.html`. Commit both files.
 - Prices match `monetization/ideas/dad-concrete-barn-sawmill/first-sale/` (2026-10-23).
 - **The order form is a placeholder**: it confirms on screen and sends nothing. Before going public, wire it to a real inbox and remove `<meta name="robots" content="noindex">`.
 - Follows the House Hansen system in `modern-viking-brand/`:
@@ -18,6 +18,13 @@ Landing page for The Woodshop, Dad's sawmill and woodshop in Trego, WI. One stat
 - `assets/img/` holds placeholder art from the House Hansen pipeline (`modern-viking-brand/.claude/skills/sketch`). Photos: Flux Klein (objects) and RealVis (hands), graded with `scripts/grade.sh natural` (hands: `forge`). Ink spots: Z-Image house hand, finished in oat ink. `art/shots.sh` regenerates every run; `assets/img/SOURCES.txt` maps each file to its run and seed.
 - Dad is fine being shown on the site (Levi, 2026-10-23).
 - Real footage goes in `raw/` (git-ignored; the phone files carry GPS, so only re-encoded frames and clips are published, with metadata stripped). Real footage is graded with the house LUT plus a green/red tame (`huesaturation`) because the mill is Kelly green and the tractor is orange; the recipe for every file is in `assets/img/SOURCES.txt`. The footer says "Some photos are illustrations" until the AI stand-ins (slab card, furniture cards, ink spots) are replaced.
+
+## Motion and ornament
+- All motion sits behind `html.motion`, which is only set when the visitor hasn't asked for reduced motion. Without it the page renders finished and static. One scroll loop at the bottom of `src.html` drives everything scroll-linked.
+- **Sketch over stills:** every real photo has an ink tracing (`assets/ink/<name>.webp`). On scroll the ink wipes in over a dark plate, the photo develops under it, and the ink stays on faintly, drifting against the photo (parallax plus pointer). To make one: `systemctl --user start comfyui`, then `python3 tools/lineart.py assets/img/<name>.webp art/lines/<name>.png --coarse`, then `tools/inklayer.sh <name> art/lines/<name>.png <floor%>` (raise the floor for busy foliage). Wrap the image in `<figure class="sketch" data-sketch><div class="plate">photo + ink</div></figure>`.
+- **The log:** `assets/endgrain.svg` lives in the Forge band as a pinned diagram. Each step of the "one log" list snaps blue chalk lines on it (slab, flitch, sawdust, timbers and boards). It is sticky on desktop and pinned under the header on phones.
+- **Ornament** (`python3 tools/ornament.py`): the knot rule (grain parting around a knot, with one Urnes strand wrapping it, drawn on reveal) and the live-edge bark top and bottom of the Forge band. The thin strand weight is shared with the mark system.
+- Also: hero wipe-in, headline word reveals, the price count-up, the rolling calculator total with the board's end grain drawn to scale, the news ticker with knot separators, and the scroll-progress kerf under the header.
 
 ## Editing copy
 - `python3 tools/copydeck.py extract` writes `pages/YYYY-MM-DD-site-copy.html` (git-ignored, never published): every line of copy, image description and search snippet on the site, editable in place.
