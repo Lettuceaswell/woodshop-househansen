@@ -11,7 +11,8 @@ ink-barn 20261023-144237-zimage/gen_01006_ (finish --ground transparent --ink E8
 ink-mill 20261023-150852-klein/gen_01014_ (klein --source raw/IMG_4893 @6s, finish --ground transparent)
 sawing raw/IMG_4896.MOV @ 20s crop 2880:2160:420:0, natural grade + green/red tame
 lumber raw/IMG_4900.MOV @ 10s crop 2880:2160:480:0, natural grade + green/red tame
-logpile raw/IMG_4852.MOV @ 19s crop 3840:1646:0:300, forge grade
+logpile raw/IMG_4852.MOV (60 fps original) @ 24s crop 3840:1646:0:0 (Dad at the log pile), forge duotone
 shed raw/IMG_4905.MOV @ 35s crop 3240:2160:300:0, natural grade + stronger red tame (r+m -0.72)
 hero-saw-poster + video/hero-saw.mp4  raw/IMG_4905.MOV (60 fps HEVC original) 10.0-14.6s at half speed, hflip, green/red tame + house-natural hald LUT, 1.0s crossfade loop
-shop raw/IMG_4827.MOV (24 fps) @ 6.9s crop 2400:1600:750:620 (hands, no face), natural grade + red/yellow tame
+shop raw/IMG_4827.MOV (24 fps) @ 2.7s crop 3240:2160:300:0, natural grade + red/yellow tame
+sawyer raw/IMG_4852.MOV @ 36s crop 1300:1300:2050:60, forge duotone

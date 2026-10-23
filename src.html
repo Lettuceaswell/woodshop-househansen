@@ -65,7 +65,7 @@ nav.links a:hover { color: var(--mv-text); }
 /* hero: text on oat, photo bleeding off the right edge with the Hero.dc fade */
 .hero { position: relative; min-height: clamp(580px, 82vh, 860px); display: flex; align-items: center; overflow: hidden; }
 .hero-photo { position: absolute; inset: 0 0 0 44%; }
-.hero-photo video { width: 100%; height: 100%; object-fit: cover; object-position: 76% 78%; display: block; background: var(--mv-oat-line); }
+.hero-photo video { width: 100%; height: 100%; object-fit: cover; object-position: 88% 76%; display: block; background: var(--mv-oat-line); }
 .hero-photo::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, var(--mv-bg) 0%, color-mix(in srgb, var(--mv-bg) 0%, transparent) 30%); }
 .hero .wrap { position: relative; z-index: 2; width: 100%; }
 .hero-copy { max-width: 540px; padding-block: clamp(48px, 7vw, 96px); }
@@ -139,7 +139,8 @@ textarea { min-height: 96px; resize: vertical; }
 .story h2 { font-size: clamp(40px, 5.6vw, 72px); margin: 16px 0 24px; }
 .story p { margin: 0 0 16px; opacity: .88; }
 blockquote { margin: 34px 0 0; padding-left: 22px; border-left: var(--strand) solid var(--mv-rule); font: italic clamp(22px, 2.6vw, 28px)/1.35 var(--font-display); }
-blockquote cite { display: block; margin-top: 12px; font: 500 12px/1 var(--font-body); letter-spacing: .16em; text-transform: uppercase; font-style: normal; color: var(--mv-text-muted); }
+blockquote cite { display: flex; align-items: center; gap: 14px; margin-top: 18px; font: 500 12px/1 var(--font-body); letter-spacing: .16em; text-transform: uppercase; font-style: normal; color: var(--mv-text-muted); }
+.sawyer { width: 56px; height: 56px; object-fit: cover; border-radius: 2px; flex: none; }
 .chain { list-style: none; margin: 0; padding: 0; counter-reset: c; border-top: var(--strand) solid var(--mv-rule); }
 .chain li { display: grid; grid-template-columns: 54px 1fr 92px; align-items: start; gap: 8px 16px; padding: 22px 0; border-bottom: var(--hair) solid var(--mv-rule); counter-increment: c; }
 .chain li::before { content: counter(c, decimal-leading-zero); font: italic 22px var(--font-display); opacity: .6; }
@@ -320,14 +321,14 @@ footer .brand .mark { font-size: 44px; color: var(--mv-text); }
   </section>
 
   <section id="story" class="forge">
-    <figure class="wrap band-photo"><img src="assets/img/logpile.webp" srcset="assets/img/logpile-640.webp 640w, assets/img/logpile.webp 1600w" sizes="(max-width: 1160px) 100vw, 1160px" width="1600" height="686" alt="The Norway pine log pile, a semi load from a logger we know" loading="lazy" decoding="async"></figure>
+    <figure class="wrap band-photo"><img src="assets/img/logpile.webp" srcset="assets/img/logpile-640.webp 640w, assets/img/logpile.webp 1600w" sizes="(max-width: 1160px) 100vw, 1160px" width="1600" height="686" alt="The sawyer at his Norway pine log pile, a semi load from a logger we know" loading="lazy" decoding="async"></figure>
     <div class="wrap story">
       <div>
         <span class="eyebrow">The mill</span>
         <h2>One log. Nothing wasted.</h2>
         <p>Forty years of building, a bandsaw mill, and a pile of Norway pine from a logger we know. Every board here was pushed through the blade by hand, right on the property in Trego.</p>
         <p>The shop barn going up now is 24 by 24, engineered around 8-foot timbers because that's what the mill can cut. Its beams came off this same pile. Deck-rehab jobs bring home reclaimed lumber, and that wood becomes the next thing we build.</p>
-        <blockquote>“I love what I do. I love creating and building things with wood.”<cite>The sawyer</cite></blockquote>
+        <blockquote>“I love what I do. I love creating and building things with wood.”<cite><img class="sawyer" src="assets/img/sawyer.webp" width="320" height="320" alt="" loading="lazy" decoding="async">The sawyer</cite></blockquote>
       </div>
       <ol class="chain">
         <li><img class="spot" src="assets/img/ink-log.webp" alt="" width="360" height="250" loading="lazy"><b>The log</b><span>Squared into a cant, then sawn into lumber and timbers.</span></li>
@@ -342,7 +343,7 @@ footer .brand .mark { font-size: 44px; color: var(--mv-text); }
   <section id="shop">
     <div class="wrap">
       <figure class="wide-photo">
-        <img src="assets/img/shop.webp" srcset="assets/img/shop-640.webp 640w, assets/img/shop.webp 1400w" sizes="(max-width: 1160px) 100vw, 1160px" width="1400" height="933" alt="Hands guiding a miter saw through a pine board in the shop" loading="lazy" decoding="async">
+        <img src="assets/img/shop.webp" srcset="assets/img/shop-640.webp 640w, assets/img/shop.webp 1400w" sizes="(max-width: 1160px) 100vw, 1160px" width="1400" height="933" alt="The sawyer cutting a pine board at the miter saw in his shop" loading="lazy" decoding="async">
         <figcaption>In the shop. Every piece is cut and fitted by hand.</figcaption>
       </figure>
       <div class="sec-head">
