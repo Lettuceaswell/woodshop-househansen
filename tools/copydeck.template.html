@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Woodshop site copy</title>
+<style>
+:root{--bg:#fafaf9;--surface:#fff;--text:#1c1917;--muted:#78716c;--border:#e7e5e4;--accent:#3C7585;--good:#16a34a;--warn:#d97706;--radius:12px}
+@media (prefers-color-scheme:dark){:root{--bg:#0c0a09;--surface:#1c1917;--text:#f5f5f4;--muted:#a8a29e;--border:#292524;--accent:#5A95A6}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+.layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:40px;max-width:1100px;margin:0 auto;padding:32px 20px}
+nav.toc{position:sticky;top:24px;align-self:start;font-size:14px}
+nav.toc a{display:flex;justify-content:space-between;gap:8px;color:var(--muted);text-decoration:none;padding:4px 0 4px 10px;border-left:2px solid transparent}
+nav.toc a.active,nav.toc a:hover{color:var(--accent);border-color:var(--accent)}
+nav.toc a b{font-weight:600;color:var(--accent)}
+main{max-width:760px}
+@media (max-width:800px){.layout{grid-template-columns:1fr;gap:16px}nav.toc{position:static;display:flex;flex-wrap:wrap;gap:4px 14px}nav.toc a{border:0;padding:4px 0}}
+.hero{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin-bottom:24px}
+.hero .date{color:var(--muted);font-size:14px}
+.hero h1{margin:4px 0 12px;font-size:30px;line-height:1.2}
+.bottom-line{font-size:18px;margin:0}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+.stat{border:1px solid var(--border);border-radius:10px;padding:14px}
+.stat .v{font-size:26px;font-weight:700}
+.stat .l{color:var(--muted);font-size:13px}
+.tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:0 0 8px}
+.tools input[type=search]{flex:1 1 240px;font:inherit;padding:10px 12px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--text);min-height:44px}
+.tools label{display:flex;gap:8px;align-items:center;font-size:14px;color:var(--muted);min-height:44px}
+section{margin:36px 0;scroll-margin-top:20px}
+h2{font-size:20px;margin:0 0 10px}
+.line{padding:10px 0;border-bottom:1px solid var(--border)}
+.ctx{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+textarea{font:inherit;width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--text);resize:none;overflow:hidden;min-height:44px;line-height:1.45}
+textarea:focus{outline:2px solid var(--accent);outline-offset:-1px}
+.was{display:none;font-size:13px;color:var(--muted);margin-top:6px}
+.was span{font-weight:600}
+.line.changed textarea{border-color:var(--warn);box-shadow:inset 3px 0 0 var(--warn)}
+.line.changed .was{display:block}
+.revert{font:inherit;font-size:12px;margin-left:6px;padding:2px 10px;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text);cursor:pointer;min-height:28px}
+.hidden{display:none}
+details{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:12px 16px;margin:12px 0}
+summary{cursor:pointer;font-weight:600}
+.respond{position:sticky;bottom:0;background:var(--bg);border-top:1px solid var(--border);padding:12px 0;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.respond button{font:inherit;font-weight:600;padding:12px 20px;border:0;border-radius:10px;background:var(--accent);color:#fff;cursor:pointer;min-height:44px}
+.respond .hint{color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="toc" id="toc"></nav>
+<main>
+
+<header class="hero">
+  <div class="date">{{DATE}} · Claude · Review</div>
+  <h1>Every line of copy on the woodshop site</h1>
+  <p class="bottom-line">Edit any line in place, then hit <b>Copy my changes</b> and paste it to Claude. Only the lines you touched get sent. Claude writes them into the site and republishes.</p>
+  <div class="stats">
+    <div class="stat"><div class="v">{{COUNT}}</div><div class="l">Lines of copy</div></div>
+    <div class="stat"><div class="v">{{SECTIONS}}</div><div class="l">Sections</div></div>
+    <div class="stat"><div class="v" id="nChanged">0</div><div class="l">Changed so far</div></div>
+  </div>
+</header>
+
+<div class="tools">
+  <input type="search" id="q" placeholder="Find a line, e.g. “pickup” or “$40”" aria-label="Filter lines">
+  <label><input type="checkbox" id="onlyChanged"> Show changed only</label>
+</div>
+
+{{BODY}}
+
+<section id="s-notes">
+  <h2>Anything else</h2>
+  <p style="color:var(--muted);margin-top:0">Bigger changes go here: add or remove a section, swap a photo, move something.</p>
+  <textarea data-key="notes" rows="3" placeholder="e.g. Add a FAQ under the order form"></textarea>
+  <details><summary>What isn't on this page</summary>
+    <p>The order confirmation sentence (“Thanks, Sam. We'll reach out at…”) is assembled by code from the buyer's name and phone. The calculator's math uses the prices in its code, not the dropdown labels. If you change a price here, say so in the notes and Claude will update the math, the price sheet and the listings to match.</p>
+  </details>
+</section>
+
+<div class="respond"><button id="respondBtn">Copy my changes</button><span class="hint" id="hint">Nothing changed yet.</span></div>
+</main>
+</div>
+<script>
+const DIGEST = "{{DIGEST}}";
+const lines = [...document.querySelectorAll('.line')];
+const fit = t => { t.style.height = 'auto'; t.style.height = t.scrollHeight + 'px'; };
+function refresh() {
+  let n = 0;
+  lines.forEach(l => { const t = l.querySelector('textarea'), c = t.value.trim() !== t.dataset.orig; l.classList.toggle('changed', c); if (c) n++; });
+  document.getElementById('nChanged').textContent = n;
+  document.getElementById('hint').textContent = n ? n + (n === 1 ? ' line' : ' lines') + ' changed. Paste the result to Claude.' : 'Nothing changed yet.';
+  document.querySelectorAll('nav.toc a').forEach(a => {
+    const k = document.querySelectorAll(a.hash + ' .line.changed').length;
+    a.querySelector('b').textContent = k ? k : '';
+  });
+  filter();
+}
+function filter() {
+  const q = document.getElementById('q').value.trim().toLowerCase(), only = document.getElementById('onlyChanged').checked;
+  lines.forEach(l => {
+    const t = l.querySelector('textarea'), hit = !q || (t.value + ' ' + t.dataset.orig).toLowerCase().includes(q);
+    l.classList.toggle('hidden', !hit || (only && !l.classList.contains('changed')));
+  });
+  document.querySelectorAll('main section[id^="s-"]').forEach(s => {
+    if (s.id === 's-notes') return;
+    s.classList.toggle('hidden', !s.querySelector('.line:not(.hidden)'));
+  });
+}
+lines.forEach(l => {
+  const t = l.querySelector('textarea');
+  t.dataset.key = 'copy.' + t.dataset.id;
+  t.addEventListener('input', () => { fit(t); refresh(); });
+  l.querySelector('.revert').addEventListener('click', () => { t.value = t.dataset.orig; fit(t); refresh(); });
+});
+document.getElementById('q').addEventListener('input', filter);
+document.getElementById('onlyChanged').addEventListener('change', filter);
+try { // TOC with live change counts
+  const toc = document.getElementById('toc');
+  document.querySelectorAll('main section[id]').forEach(s => {
+    const a = document.createElement('a'); a.href = '#' + s.id;
+    a.innerHTML = '<span></span><b></b>'; a.firstChild.textContent = s.querySelector('h2').textContent; toc.appendChild(a);
+  });
+  const links = [...toc.querySelectorAll('a')];
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) links.forEach(l => l.classList.toggle('active', l.hash === '#' + e.target.id)); }), { rootMargin: '-20% 0px -70% 0px' });
+  document.querySelectorAll('main section[id]').forEach(s => io.observe(s));
+} catch (e) {}
+requestAnimationFrame(() => lines.forEach(l => fit(l.querySelector('textarea'))));
+addEventListener('resize', () => lines.forEach(l => fit(l.querySelector('textarea'))));
+document.getElementById('respondBtn').addEventListener('click', e => {
+  const changes = lines.filter(l => l.classList.contains('changed')).map(l => {
+    const t = l.querySelector('textarea'); return { id: +t.dataset.id, from: t.dataset.orig, to: t.value.trim() };
+  });
+  const notes = document.querySelector('[data-key="notes"]').value.trim();
+  const out = { copydeck: 'woodshop', source: DIGEST, changes, notes };
+  const summary = changes.length + (changes.length === 1 ? ' line' : ' lines') + ' changed' + (notes ? ' + notes' : '');
+  const text = 'RESPONSE to "' + document.title + '"\n' + summary + '\n\n' + JSON.stringify(out, null, 2);
+  navigator.clipboard.writeText(text).then(() => { e.target.textContent = 'Copied ✓'; setTimeout(() => e.target.textContent = 'Copy my changes', 1500); });
+});
+</script>
+</body>
+</html>
