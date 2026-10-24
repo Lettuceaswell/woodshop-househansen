@@ -18,6 +18,7 @@ Last session: 2026-10-23. Read this first next time.
 
 ## Copy
 - `python3 tools/copydeck.py extract` → `pages/YYYY-MM-DD-site-copy.html` (local only). Levi edits, pastes the reply, then save it to a file and run `python3 tools/copydeck.py apply reply.txt`. Re-run extract after layout changes.
+- **Prices now live in `monetization-wt/wood-first-sale/ideas/dad-concrete-barn-sawmill/first-sale/price-book.md`** (Dad sent real prices 2026-10-23; each line is marked Dad's or placeholder). The site still shows the old kit prices below: sawing $50/hr vs Dad's $0.75/bf or $75/hr.
 - Prices on the site match `monetization/ideas/dad-concrete-barn-sawmill/first-sale/` (branch `wt/wood-first-sale`). Furniture prices are placeholders: chair $325 and table $895 are from Etsy comps, vanity $650 and shelf $85 are guesses. Dad hasn't approved any price yet.
 
 ## Next, in order
