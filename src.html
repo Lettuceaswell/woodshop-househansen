@@ -362,9 +362,10 @@ footer .brand .mark { font-size: 44px; color: var(--mv-text); }
           <figure class="card-img sketch" data-sketch><div class="plate"><img src="assets/img/sawing.webp" srcset="assets/img/sawing-640.webp 640w, assets/img/sawing.webp 960w" sizes="(max-width: 900px) 100vw, 380px" width="960" height="720" alt="Pushing the sawhead through a Norway pine log under the saw shed" loading="lazy" decoding="async"><img class="ink" src="assets/ink/sawing.webp" width="960" height="720" alt="" loading="lazy" decoding="async"></div></figure>
           <span class="num">No. 01</span>
           <h3>Custom sawing</h3>
-          <div class="price" data-count>$50<small>/ hour</small></div>
+          <div class="price" data-count>$0.75<small>/ board foot</small></div>
           <p>Bring your logs to our bandsaw mill and leave with boards, beams or live-edge slabs, sawn to your cut list.</p>
           <ul>
+            <li>Or by the hour<b>$75 / hour</b></li>
             <li>Minimum<b>1 hour</b></li>
             <li>Log length<b>up to 8 ft</b></li>
             <li>Blade hit by hidden metal<b>$30</b></li>
@@ -375,12 +376,13 @@ footer .brand .mark { font-size: 44px; color: var(--mv-text); }
           <figure class="card-img sketch" data-sketch><div class="plate"><img src="assets/img/lumber.webp" srcset="assets/img/lumber-640.webp 640w, assets/img/lumber.webp 960w" sizes="(max-width: 900px) 100vw, 380px" width="960" height="720" alt="Fresh-sawn pine timbers on sawhorses" loading="lazy" decoding="async"><img class="ink" src="assets/ink/lumber.webp" width="960" height="720" alt="" loading="lazy" decoding="async"></div></figure>
           <span class="num">No. 02</span>
           <h3>Rough-sawn Norway pine</h3>
-          <div class="price" data-count>$1.00<small>/ board foot</small></div>
-          <p>Locally grown pine for sheds, barns, board-and-batten, fencing, raised beds and shop projects.</p>
+          <div class="price" data-count>$3<small>/ board &amp; up</small></div>
+          <p>Locally grown pine for sheds, barns, board-and-batten, fencing, raised beds and shop projects. Full dimension: our 2x4 really is 2" by 4".</p>
           <ul>
-            <li>Boards &amp; dimensional<b>$1.00 / bf</b></li>
-            <li>Timbers 6×6 and up<b>$1.25 / bf</b></li>
-            <li>Live-edge flitches<b>$2.00 / bf</b></li>
+            <li>2x4x8 · 2x6x8 · 4x4x8<b>$6 · $8 · $12</b></li>
+            <li>6x6x8 timber<b>$27</b></li>
+            <li>Lap siding, 1x7x8, bundle of 6<b>$30</b></li>
+            <li>Craft boards, 8 ft, bundle<b>$20</b></li>
           </ul>
           <a class="btn ghost sm" href="#calculator">Price your order</a>
         </article>
@@ -388,10 +390,11 @@ footer .brand .mark { font-size: 44px; color: var(--mv-text); }
           <figure class="card-img sketch" data-sketch><div class="plate"><img src="assets/img/slab.webp" srcset="assets/img/slab-640.webp 640w, assets/img/slab.webp 960w" sizes="(max-width: 900px) 100vw, 380px" width="960" height="720" alt="Bundles of pine slab wood beside a campfire ring at dusk" loading="lazy" decoding="async"><img class="ink" src="assets/ink/slab.webp" width="960" height="720" alt="" loading="lazy" decoding="async"></div></figure>
           <span class="num">No. 03</span>
           <h3>Slab wood &amp; campfire bundles</h3>
-          <div class="price" data-count>$40<small>/ pickup load</small></div>
-          <p>Pine slab cut to 16". Lights fast and burns hot, made for fire pits, deer camp and starting the stove.</p>
+          <div class="price" data-count>$20<small>/ 8 ft bundle</small></div>
+          <p>Pine slab by the 8 ft bundle, or cut to 16" for the fire pit. Lights fast and burns hot, made for fire pits, deer camp and starting the stove.</p>
           <ul>
-            <li>Pickup load, you load<b>$40</b></li>
+            <li>8 ft slab bundle<b>$20</b></li>
+            <li>Cut to 16", pickup load, you load<b>$40</b></li>
             <li>Campfire bundle<b>$6 · 5 for $25</b></li>
             <li>Delivery near Trego<b>ask</b></li>
           </ul>
@@ -407,15 +410,14 @@ footer .brand .mark { font-size: 44px; color: var(--mv-text); }
     <div class="wrap">
       <div class="sec-head">
         <div><span class="eyebrow" data-rv>Lumber calculator</span><h2 data-split>What will it cost?</h2></div>
-        <p data-rv style="--i:2">Board feet = thickness × width × length ÷ 12. We did the math for you.</p>
+        <p data-rv style="--i:2">Pick a size and we'll price it from our list. Sizes not on the list run $1.00 a board foot.</p>
       </div>
       <div class="calc" data-rv>
         <div class="inputs">
           <label class="full">Product
             <select id="c-type">
-              <option value="1.00">Boards &amp; dimensional · $1.00/bf</option>
-              <option value="1.25">Timbers 6×6 and up · $1.25/bf</option>
-              <option value="2.00">Live-edge flitch · $2.00/bf</option>
+              <option value="pine">Rough-sawn pine · priced per piece</option>
+              <option value="edge">Live-edge flitch · $2.00/bf</option>
             </select>
           </label>
           <label>Thickness (in)
@@ -648,21 +650,24 @@ footer .brand .mark { font-size: 44px; color: var(--mv-text); }
     const s = 230 / 12, bw = w * s, bh = t * s, x = 150 - bw / 2, y = 300 - 34 - bh;
     for (const id of ["b-rect", "b-clip"]) { const r = $(id); r.setAttribute("x", x); r.setAttribute("y", y); r.setAttribute("width", bw); r.setAttribute("height", bh); }
   }
+  // Price per 8 ft piece (price book, 2026-10-23). Shorter pieces prorate; other sizes are $1.00/bf.
+  const PIECE = { "1x4": 3, "1x6": 4, "1x8": 5, "1x10": 7, "1x12": 8, "2x4": 6, "2x6": 8, "2x8": 10, "2x10": 14, "2x12": 16, "4x4": 12, "6x6": 27, "8x8": 53 };
   function calc() {
-    const rate = +$("c-type").value, t = +$("c-t").value, w = +$("c-w").value, l = +$("c-l").value;
+    const t = +$("c-t").value, w = +$("c-w").value, l = +$("c-l").value, edge = $("c-type").value === "edge";
     const q = Math.max(1, Math.min(2000, parseInt($("c-q").value, 10) || 1));
-    const bf = t * w * l / 12 * q;
-    roll(bf * rate);
+    const bf = t * w * l / 12 * q, eight = PIECE[`${Math.min(t, w)}x${Math.max(t, w)}`];
+    const cost = edge ? bf * 2 : eight ? Math.round(eight * l / 8 * q * 100) / 100 : bf * 1;
+    roll(cost);
     board(t, w);
     $("c-bf").textContent = `${q} ${q === 1 ? "piece" : "pieces"} · ${Math.round(bf * 10) / 10} board feet`;
-    summary = `${q} pcs ${t}×${w}×${l}' (${$("c-type").selectedOptions[0].text.split(" · ")[0]}), about ${money(bf * rate)}`;
+    summary = `${q} pcs ${t}×${w}×${l}' (${$("c-type").selectedOptions[0].text.split(" · ")[0]}), about ${money(cost)}`;
   }
   ["c-type", "c-t", "c-w", "c-l", "c-q"].forEach(id => $(id).addEventListener("input", calc));
   calc();
 
   const pick = v => { const box = document.querySelector(`#req input[value="${v}"]`); if (box) box.checked = true; };
   $("c-order").addEventListener("click", () => {
-    pick($("c-type").value === "2.00" ? "Live edge" : "Lumber");
+    pick($("c-type").value === "edge" ? "Live edge" : "Lumber");
     const d = $("details"); d.value = (d.value ? d.value + "\n" : "") + summary;
   });
   document.querySelectorAll("[data-pick]").forEach(a => a.addEventListener("click", () =>
