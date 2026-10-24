@@ -16,3 +16,4 @@ shed raw/IMG_4905.MOV @ 35s crop 3240:2160:300:0, natural grade + stronger red t
 hero-saw-poster + video/hero-saw.mp4  raw/IMG_4905.MOV (60 fps HEVC original) 10.0-14.6s at half speed, hflip, green/red tame + house-natural hald LUT, 1.0s crossfade loop
 shop raw/IMG_4827.MOV (24 fps) @ 2.7s crop 3240:2160:300:0, natural grade + red/yellow tame
 sawyer raw/IMG_4852.MOV @ 36s crop 1300:1300:2050:60, forge duotone
+og  raw/IMG_4896.MOV @ 20s, huesaturation g -0.5 + r+m -0.5, house-natural hald LUT, crop 2880:1512:600:260 -> 1200x630; lockup (mark + "Hansen Woodshop" Newsreader 64px + "Sawmill · Trego, Wisconsin") over a bottom-left charcoal fade, rendered in headless Chromium

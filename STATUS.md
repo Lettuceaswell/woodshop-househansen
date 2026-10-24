@@ -3,7 +3,7 @@ Last session: 2026-10-23. Read this first next time.
 
 ## Where it stands
 - **Site:** one static page (`src.html` → `python3 build.py` → `index.html`) on GitHub Pages, repo `Lettuceaswell/woodshop-househansen`, branch `main`. Follows the House Hansen system in `../modern-viking-brand` (tokens, Quiet weighting, imprint rule, mark size rule, ink-sketch illustrations, wool grain). Rules are summarized in `README.md`.
-- **Name and imprint:** the site is "Hansen Woodshop" (renamed from "The Woodshop" by Levi, 2026-10-23). "House Hansen" appears only in the footer imprint. The link-preview image `assets/og.jpg` still shows the old "The Woodshop" lockup.
+- **Name and imprint:** the site is "Hansen Woodshop" (renamed from "The Woodshop" by Levi, 2026-10-23). "House Hansen" appears only in the footer imprint.
 - **Live at the domain over HTTP** (CNAME in place, DNS verified 2026-10-23). GitHub had not issued the HTTPS certificate yet that evening. Once it exists, run `gh api -X PUT repos/Lettuceaswell/woodshop-househansen/pages -F https_enforced=true`. If it is still missing after a day, remove and re-add the custom domain in Pages settings to restart issuance.
 - **Motion pass (2026-10-23):** ink tracings over every real photo, scroll parallax, the end-grain log back as a pinned "how we open a log" diagram, the knot-rule dividers, the live-edge Forge band, and more. See README, "Motion and ornament".
 - **noindex is on** and the **order form is a placeholder** (confirms on screen, sends nothing). Don't share the link publicly until the form goes somewhere real. Then remove the `robots` meta tag.
