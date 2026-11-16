@@ -4,7 +4,7 @@ Last session: 2026-10-23. Read this first next time.
 ## Where it stands
 - **Site:** one static page (`src.html` → `python3 build.py` → `index.html`) on GitHub Pages, repo `Lettuceaswell/woodshop-househansen`, branch `main`. Follows the House Hansen system in `../modern-viking-brand` (tokens, Quiet weighting, imprint rule, mark size rule, ink-sketch illustrations, wool grain). Rules are summarized in `README.md`.
 - **Name and imprint:** the site is "Hansen Woodshop" (renamed from "The Woodshop" by Levi, 2026-10-23). "House Hansen" appears only in the footer imprint.
-- **Live at the domain over HTTP** (CNAME in place, DNS verified 2026-10-23). Checked 2026-11-16: still no HTTPS certificate. The Pages API returns no `https_certificate` and `https_enforced:false`, and `curl -I https://woodshop.househansen.com` fails with rc=60 (cert error). Not enforced. Removing and re-adding the custom domain in Pages settings to restart issuance is Levi's call.
+- **Live at https://woodshop.househansen.com, HTTPS enforced (2026-11-16).** The certificate was stuck for 24 days; removing and re-adding the custom domain in Pages made GitHub issue it (valid to 2027-02-14). `og:url` and `og:image` now use https.
 - **Motion pass (2026-10-23):** ink tracings over every real photo, scroll parallax, the end-grain log back as a pinned "how we open a log" diagram, the knot-rule dividers, the live-edge Forge band, and more. See README, "Motion and ornament".
 - **noindex is on** and the **order form is a placeholder** (confirms on screen, sends nothing). Don't share the link publicly until the form goes somewhere real. Then remove the `robots` meta tag.
 - **Preview locally:** `python3 -m http.server 8790 --bind 127.0.0.1` in this folder → http://127.0.0.1:8790/
@@ -22,7 +22,7 @@ Last session: 2026-10-23. Read this first next time.
 - Furniture prices are placeholders: chair $325 and table $895 are from Etsy comps, vanity $650 and shelf $85 are guesses. 
 
 ## Next, in order
-1. Enforce HTTPS (still no cert as of 2026-11-16; Levi decides on re-adding the domain) with `gh api -X PUT repos/Lettuceaswell/woodshop-househansen/pages -F https_enforced=true`, then and switch the `og:url`/`og:image` tags in `src.html` to https. Levi reacts to the motion pass.
+1. Done 2026-11-16: HTTPS enforced, og tags on https. Still open here: Levi reacts to the motion pass.
 2. Dad settles the open price notes (sawing rule, biochar label, siding, bundle sizes). Update the price book first, then site, calculator `PIECE` table, price sheet and listings together.
 3. Wire the order form to a real inbox (text or email), then remove noindex.
 4. Replace AI placeholders with real photos: slab bundle, anything Dad has built.
